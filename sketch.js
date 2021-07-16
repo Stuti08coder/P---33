@@ -17,16 +17,16 @@ function setup() {
 bgImage = loadImage("snow1.jpg")
   
   world = engine.world;
-
+  snow1 = new Snow(400,200,15)
+particle = new Particles(400,200,5)
+}
   for (var j = 75; j <=width; j=j+50) { 
     particles .push(new Particles(j,75));
   }
 
 
 
-  snow1 = new Snow(400,200,15)
-
-}
+  
 
 function draw() {
   background(bgImage);  
@@ -43,7 +43,7 @@ function draw() {
 
 fill("white")
 snow1.display();
-
+particle.display();
 
 
 //  drawSprites();
