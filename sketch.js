@@ -17,12 +17,15 @@ function setup() {
 bgImage = loadImage("snow1.jpg")
   
   world = engine.world;
-  snow1 = new Snow(400,200,15)
-particle = new Particles(400,200,5)
+  //snow1 = new Snow(400,200,15)
+//particle = new Particles(400,200,5)
+
+// for (var j = 75; j <=800; j=j+30) { 
+//   snows.push(new Snow(j,75,15));
+// }
+
 }
-  for (var j = 75; j <=width; j=j+50) { 
-    particles .push(new Particles(j,75));
-  }
+  
 
 
 
@@ -33,17 +36,18 @@ function draw() {
   Engine.update(engine);
  
   
-  if(frameCount%50===0){
-    snows.push(new Snows(random(width/2-10, width/2+10),15,15));
-    
-    
-    }
+   if(frameCount%5===0){
+   snows.push(new Snow(random(0, width),15,15));
+         }
   
-  
+    
 
 fill("white")
-snow1.display();
-particle.display();
+//snow1.display();
+for (var k = 0; k <snows.length; k++) {
+  snows[k].display();
+}
+//particle.display();
 
 
 //  drawSprites();
